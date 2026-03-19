@@ -15,5 +15,18 @@ while the global variable remains inaccessible unless the global keyword is used
 
 */
 
+ $COUNT = 0;
+
+
+function staticVar() {
+    global $COUNT; // Connects to the variable defined outside
+    static $count = 0;
+    $count++;
+    echo "Static: $count | Global: $COUNT <br>";
+}
+
+staticVar();
+staticVar();
+staticVar();
 
 ?>
